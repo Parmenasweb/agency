@@ -51,7 +51,7 @@ export default function Component() {
                 <p className="text-muted-foreground md:text-xl/relaxed">
                   StudyJetGloal was founded in 2022 with the goal of making
                   study abroad accessible to students from all backgrounds. Over
-                  the years, we've grown to become a leading provider of
+                  the years, weve grown to become a leading provider of
                   transformative international education experiences, partnering
                   with universities and organizations around the world.
                 </p>

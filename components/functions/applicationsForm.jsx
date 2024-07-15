@@ -15,8 +15,10 @@ import {
   SelectContent,
   SelectItem,
 } from "@/components/ui/select";
+import { Checkbox } from "../ui/checkbox";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export default function Component() {
   return (

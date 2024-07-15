@@ -80,7 +80,7 @@ export default function Component() {
                 Our agency has over a decade of experience in facilitating
                 successful study abroad partnerships with universities around
                 the world. We are dedicated to providing personalized support
-                and tailored solutions to meet your institution's needs.
+                and tailored solutions to meet your institutions needs.
               </p>
               <div className="mt-6 flex flex-wrap items-center gap-4">
                 <Badge variant="secondary">NAFSA Accredited</Badge>
