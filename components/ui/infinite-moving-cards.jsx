@@ -10,8 +10,8 @@ export const InfiniteMovingCards = ({
   pauseOnHover = true,
   className,
 }) => {
-  const containerRef = useRef(HTMLDivElement);
-  const scrollerRef = useRef(HTMLUListElement);
+  const containerRef = useRef(null);
+  const scrollerRef = useRef(null);
 
   useEffect(() => {
     addAnimation();
