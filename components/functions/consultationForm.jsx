@@ -26,7 +26,7 @@ import { Textarea } from "@/components/ui/textarea";
 
 export default function ConsultationForm() {
   return (
-    <Card className="w-full max-w-md mx-auto max-h-[80%] p-0 ">
+    <Card className="w-full max-w-md mx-auto max-h-[90%] p-1 ">
       <form action="" className="h-[90%] ">
         <CardHeader>
           <CardTitle>Book a Free Consultation</CardTitle>
