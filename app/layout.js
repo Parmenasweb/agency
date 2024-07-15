@@ -2,6 +2,7 @@ import { Space_Grotesk } from "next/font/google";
 import { JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
+import Navbar from "./(home)/components/Navbar";
 
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] });
 const jetBrainsMono = JetBrains_Mono({
@@ -24,6 +25,7 @@ export default function RootLayout({ children }) {
           enableSystem
           disableTransitionOnChange
         >
+          <Navbar />
           {children}
         </ThemeProvider>
       </body>

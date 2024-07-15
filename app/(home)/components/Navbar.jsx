@@ -2,24 +2,36 @@
 import { usePathname } from "next/navigation";
 
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import Image from "next/image";
 import Link from "next/link";
 import { CiMenuFries } from "react-icons/ci";
 import { Sheet, SheetTrigger, SheetContent } from "@/components/ui/sheet";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogClose,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import ConsultationForm from "@/components/functions/consultationForm";
 
 // /create the navigation links
 const links = [
   {
     name: "programs & destination",
-    path: "/programs",
+    path: "/programs&destinations",
   },
   {
     name: "schorlarship",
-    path: "/schorlarships",
+    path: "/schorlarship",
   },
   {
     name: "Blogs",
-    path: "/blog",
+    path: "/blogs",
   },
   {
     name: "about us",
@@ -27,7 +39,7 @@ const links = [
   },
   {
     name: "contact us",
-    path: "/contact",
+    path: "/contactUs",
   },
 ];
 
@@ -36,7 +48,7 @@ export function MobileNav() {}
 export default function Navbar() {
   const pathName = usePathname();
   return (
-    <nav className="flex flex-row mt-1 border-slate-400 rounded-xl border items-center justify-between w-[97%] px-1 py-2 mx-auto">
+    <nav className="flex fixed flex-row bg-gradient-to-r from-primary to-primary-foreground border-slate-400 rounded-sm border items-center z-50 justify-between w-full pr-4 mx-auto">
       <div className="mr-2 flex flex-row ">
         <Link className="" href="/">
           <Image
@@ -57,7 +69,7 @@ export default function Navbar() {
       <div className="flex gap-8 flex-row items-center justify-end w-[50%]">
         <Sheet className="">
           <SheetTrigger className="flex justify-center items-center">
-            <CiMenuFries className="text-[32px] text-white md:hidden sm:flex" />
+            <CiMenuFries className="text-[32px]  md:hidden sm:flex" />
           </SheetTrigger>
           <SheetContent>
             <div className="mt-20 mb-20 text-center flex items-center justify-center text-2xl">
@@ -77,7 +89,7 @@ export default function Navbar() {
                   href={link.path}
                   className={`capitalize flex items-center justify-center w-full text-lg py-3 hover:text-green-500 transition-all ${
                     link.path === pathName &&
-                    "text-green-500 border-b-2 border-green-500"
+                    "bg-green-500 border-b-2 border-green-500"
                   }`}
                 >
                   {link.name}
@@ -85,7 +97,22 @@ export default function Navbar() {
               ))}
             </nav>
             <div className="flex py-3 items-center justify-center">
-              <Button className="font-semibold">Book a Call</Button>
+              <Dialog>
+                <DialogTrigger asChild>
+                  <Button variant="outline">Book a consultation</Button>
+                </DialogTrigger>
+                <DialogContent className="sm:max-w-[425px] sm:max-h-[90vh] ">
+                  <DialogTitle>Contact Information</DialogTitle>
+                  <ConsultationForm />
+                  <DialogFooter className="sm:justify-start">
+                    <DialogClose asChild>
+                      <Button type="button" variant="secondary">
+                        Close
+                      </Button>
+                    </DialogClose>
+                  </DialogFooter>
+                </DialogContent>
+              </Dialog>
             </div>
           </SheetContent>
         </Sheet>
@@ -97,17 +124,33 @@ export default function Navbar() {
               href={link.path}
               className={`${
                 link.path === pathName &&
-                "text-accent border-b-2 border-green-500"
-              } capitalize flex items-center font-medium hover:text-green-500 transition-all`}
+                "text-green-500 border-b-2 border-green-500"
+              } capitalize flex items-center font-medium hover:border-b-2 hover:o hover:text-green-500 transition-all`}
             >
               {link.name}
             </Link>
           ))}
           <div className="flex items-center justify-end  ml-6">
-            <Button>Book a Call</Button>
+            <Dialog>
+              <DialogTrigger asChild>
+                <Button variant="outline">Book a consultation</Button>
+              </DialogTrigger>
+              <DialogContent className="sm:max-w-[425px]">
+                <ConsultationForm />
+                <DialogFooter className="sm:justify-start">
+                  <DialogClose asChild>
+                    <Button type="button" variant="secondary">
+                      Close
+                    </Button>
+                  </DialogClose>
+                </DialogFooter>
+              </DialogContent>
+            </Dialog>
           </div>
         </div>
       </div>
     </nav>
   );
 }
+
+// --------------------------------------------

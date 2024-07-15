@@ -5,7 +5,7 @@ import PageTitle from "../pageTitle";
 
 export default function HeroSection() {
   return (
-    <main className="min-h-[55vh] flex-col-reverse gap-14 lg:gap-0 lg:flex-row w-[95%] my-5 mx-auto flex items-center justify-between">
+    <main className="min-h-[69vh] flex-col-reverse gap-14 lg:gap-0 lg:flex-row w-[95%] mb-2 mt-5 mx-auto flex items-center justify-between">
       <div className="space-y-10 text-center lg:text-left">
         <h1 className="text-4xl lg:text-6xl font-bold ">
           unlock the world{" "}

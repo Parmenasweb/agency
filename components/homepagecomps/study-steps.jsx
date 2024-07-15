@@ -8,11 +8,11 @@ import { PiAirplaneTakeoffBold } from "react-icons/pi";
 
 function StudySteps() {
   return (
-    <main className="space-y-4">
-      <h2 className="font-semibold text-2xl w-[80%] mx-auto flex items-center justify-center ">
+    <main className=" p-2 mb-4 h-auto">
+      <h2 className="font-semibold mb-4 text-2xl w-[80%] mx-auto flex items-center justify-center ">
         Steps to : Study Abroad
       </h2>
-      <p className="font-semibold  lg:text-lg w-[70%] mx-auto ">
+      <p className="font-semibold text-center text-md lg:text-lg w-[70%] my-3 mx-auto ">
         To make sure your application process goes smooth, you must follow these
         steps to submit your application and get accepted
       </p>
